@@ -90,8 +90,8 @@ print("\n=== Samples ===")
 print(samp_stats[["content", "mean_od", "sd_od", "cv_pct", "n_flagged"]].to_string(index=False))
 
 # --- Plate QC gate ---
-# ICH M10: CV% < 15% for standards, < 20% for samples.
-# CV% check is skipped for near-zero OD (noise floor artifact).
+# R&D Systems HSTA00E kit acceptance criteria: CV% < 15%.
+# CV% check is skipped for near-zero OD (noise floor artifact)
 CV_OD_MINIMUM = 0.05
 
 qc_results   = []
