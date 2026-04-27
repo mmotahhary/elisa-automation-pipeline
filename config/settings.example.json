@@ -1,0 +1,85 @@
+{
+  "paths": {
+    "data_output" : "C:/your/path/ELISA_Project/data/output",
+    "data_input"  : "C:/your/path/ELISA_Project/data/input",
+    "flags"       : "C:/your/path/ELISA_Project/data/flags",
+    "reports"     : "C:/your/path/ELISA_Project/reports",
+    "logs"        : "C:/your/path/ELISA_Project/logs"
+  },
+
+  "assay": {
+    "name"             : "TNF-alpha ELISA",
+    "sample_type"      : "Human Plasma",
+    "n_samples"        : 10,
+    "replicates"       : 3,
+    "standard_levels"  : 7,
+    "controls"         : ["Blank", "Negative Control", "Positive Control"],
+    "plate_format"     : "96-well",
+    "wavelength_nm"    : 450,
+    "ref_wavelength_nm": 570,
+    "dilution_factor"  : 1
+  },
+
+  "standard_concentrations": {
+    "Standard_L1": 0.156,
+    "Standard_L2": 0.313,
+    "Standard_L3": 0.625,
+    "Standard_L4": 1.25,
+    "Standard_L5": 2.5,
+    "Standard_L6": 5.0,
+    "Standard_L7": 10.0
+  },
+
+  "pipetting": {
+    "sample_volume_ul"      : 50,
+    "standard_volume_ul"    : 50,
+    "control_volume_ul"     : 50,
+    "diluent_volume_ul"     : 50,
+    "wash_volume_ul"        : 400,
+    "wash_cycles"           : 4,
+    "conjugate_volume_ul"   : 200,
+    "streptavidin_volume_ul": 200,
+    "substrate_volume_ul"   : 200,
+    "stop_volume_ul"        : 50,
+    "mix_cycles"            : 3,
+    "mix_volume_ul"         : 80,
+    "tip_type"              : "1000uL_filtered",
+    "aspirate_speed"        : "slow",
+    "dispense_speed"        : "normal"
+  },
+
+  "incubation": {
+    "sample_sec"           : 7200,
+    "sample_temp_c"        : 25,
+    "detection_antibody_sec": 3600,
+    "detection_temp_c"     : 25,
+    "streptavidin_sec"     : 1800,
+    "substrate_sec"        : 1800,
+    "substrate_temp_c"     : 25
+  },
+
+  "qc": {
+    "r2_threshold"     : 0.99,
+    "cv_threshold_pct" : 15.0,
+    "blank_max_od"     : 0.05,
+    "neg_ctrl_max_od"  : 0.10,
+    "pos_ctrl_min_od"  : 1.20
+  },
+
+  "instruments": {
+    "hamilton"    : "Hamilton_STARlet_01",
+    "plate_reader": "SoftMaxPro_Reader_01"
+  },
+
+  "lims": {
+    "endpoint"   : "http://lims.internal/api/v1/results",
+    "api_key"    : "YOUR_API_KEY_HERE",
+    "max_retries": 3,
+    "timeout"    : 10,
+    "retry_delay": 2
+  },
+
+  "simulation": {
+    "error_simulation_enabled": false
+  }
+}
